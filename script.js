@@ -6,18 +6,19 @@ function createGrid(gridSize) {
     for (i = 0; i < gridSize*gridSize; i++) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
-        container.appendChild(cell);
+        
 
         let cellSize = 960/gridSize;
         cell.style.width = `${cellSize}px`;
         cell.style.height = `${cellSize}px`;
 
-        cell.addEventListener('mouseenter', changeColor)
+        cell.addEventListener('mouseenter', () => {
+            cell.style.backgroundColor = '#333';
 
-        function changeColor(color = 'black'){
-            cell.style.backgroundColor = color;
-        }
-    }
+        });
+        container.appendChild(cell);
+    };
+    
 };
 
 createGrid(16);
