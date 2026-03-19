@@ -23,3 +23,14 @@ function createGrid(gridSize) {
 
 createGrid(16);
 
+const gridSizeButton = document.querySelector('#gridSize');
+gridSizeButton.addEventListener('click', () =>{
+    gridSize = prompt('What size should the grid be?', 16);
+    if (1<= gridSize <= 100) {
+        createGrid(gridSize);
+        cell.style.backgroundColor('#f0f0f0');
+    } else {
+        alert('Please enter in a number between 1-100!');
+        return;
+    }
+});
